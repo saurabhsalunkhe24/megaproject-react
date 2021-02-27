@@ -1,8 +1,12 @@
 import React, { Component } from "react";
+import {  Route, Link ,Switch} from "react-router-dom";
+import {SignUp} from "./signup.component";
+
 
 export default class Login extends Component {
     render() {
         return (
+            <div>
             <form>
 
                 <h3>Log in</h3>
@@ -26,9 +30,13 @@ export default class Login extends Component {
 
                 <button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
                 <p className="forgot-password text-right">
-                    Forgot <a href="#">password?</a>
+                    Forgot <a href="#">password?</a><Link to="/sign-up"> Create an Account</Link>
                 </p>
             </form>
+            <Switch><Route exact path='/sign-up' component={SignUp} /></Switch>
+           
+            </div>
         );
     }
 }
+export {Login};
